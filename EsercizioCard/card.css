@@ -1,0 +1,41 @@
+*{
+    padding: 0;
+  
+}
+
+.boxcontainer{
+    border: 100px;
+    width: 250px;
+    height: 460px;
+    border: solid black;
+    padding: 10px;
+    background-color: azure;
+    border-radius: 10px;
+    box-sizing: border-box;
+    margin-left: 40%;
+    margin-top: 6%;
+    
+    
+}
+.img{
+    border:2px solid black;
+    border-radius: 0px;
+   
+
+}
+.itemOne{
+    border: 2px solid black;
+
+    
+    
+}
+.itemtwo{
+    border:2px solid black;
+
+}
+.iteamthird{
+    border:2px solid black;
+}
+.links{
+    border: 2px solid black;
+}
