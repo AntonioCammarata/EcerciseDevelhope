@@ -1,0 +1,101 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: rgb(116, 114, 114);
+}
+.card{
+    position: relative;
+    width: 360px;
+    height: 400px;
+    padding: 20px;
+    background-color: white;
+    margin-right: 20px;
+    border-radius: 8px;
+}
+.card .top{
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+}
+.userdDetails{
+    display: flex;
+    align-items: center;
+}
+.profilo{
+    position: relative;
+    width: 30px;
+    height: 30px;
+    border-radius: 70%;
+    overflow: hidden;
+    margin-right: 8px;
+}
+.cerchio{
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+}
+.userDetails h3 span{
+    font-size: 0.75em;
+}
+.imageCard{
+    position: relative;
+    width: 100%;
+    height: 320px;
+    margin:10px;
+}
+.card2{
+    position: relative;
+    width: 360px;
+    height: 400px;
+    padding: 20px;
+    background-color: white;
+    margin-right: 20px;
+    border-radius: 8px;
+}
+
+.card3{
+    position: relative;
+    width: 360px;
+    height: 400px;
+    padding: 20px;
+    background-color: white;
+    margin-right: 20px;
+    border-radius: 8px;
+}
+
+.card2 .top{
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    
+}
+.card3 .top{
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+}
+.userdDetails span{
+    color: rgb(172, 197, 197);
+}
+@media screen and (max-width: 769px){
+    body{
+        flex-wrap: wrap;
+        
+        
+    }
+    .card2{
+        margin-bottom: 10px;
+    }
+    .card{
+        margin-bottom: 10px;
+    }
+    
+}
