@@ -1,0 +1,66 @@
+@use "variable.scss";
+@use "function.scss";
+$color-red: variable.$color-primary;
+$color-green: variable.$color-ternary;
+
+.container {
+  border: 1px solid $color-red;
+  padding: 20px;
+}
+.exercise {
+  display: flex;
+  border: 1px solid $color-green;
+  &:nth-child(odd) {
+    color: blue;
+  }
+  &:nth-child(even) {
+    color: red;
+  }
+}
+
+.title {
+  text-align: center;
+  color: $color-green;
+  font-weight: 100;
+  text-decoration: underline;
+  text-decoration-color: blue;
+  text-underline-offset: 5px;
+  display: flex;
+  justify-content: center
+}
+.title-1{
+    @extend .title;
+
+}
+.title-2{
+    @extend .title;
+    padding: 1rem;
+    border: 1px solid red;
+    width: fit-content;
+    text-decoration: none;
+    margin-left: 43%
+   
+
+
+}
+.exercise article {
+  @extend .exercise;
+  padding: 0 10px;
+}
+html {
+  font-size: 62.5%;
+}
+@mixin paragraph(
+  $color: green,
+  $border-color: blue,
+  $font-size: function.rem(38.4px)
+) {
+  display: flex;
+  border: 2px solid $border-color;
+  color: $color;
+  font-size: $font-size;
+  margin-top: 10px;
+}
+.add {
+  @include paragraph;
+}
