@@ -1,0 +1,91 @@
+@use "variable.scss";
+@use "function.scss";
+$color-Red: variable.$color-primary;
+$color-Green: variable.$color-ternary;
+$color-bg: variable.$color-bg;
+$color-nm: variable.$color-nm;
+
+html{
+  font-size: 62.5%;
+}
+.container {
+border: 1px solid $color-Red;
+width: 55%;
+padding: 20px;
+margin-left: 20%;
+
+}
+.exercise {
+display: flex;
+border: 1px solid $color-Green;
+&:nth-child(odd) {
+  color: blue;
+}
+&:nth-child(even) {
+  color:$color-Red;
+}
+}
+.title-1{
+text-align: center;
+color: $color-Green;
+font-weight: 100 ;
+text-decoration:underline;
+text-decoration-color: blue;
+text-underline-offset: 5px;
+}
+.title-2{
+  @extend .title-1;
+  padding: 1rem;
+  border: 1px solid;
+  border-color: $color-Red;
+  width: fit-content;
+  text-decoration: none;
+  margin-left: 38%;
+}
+.exercise article {
+@extend .exercise;
+padding: 0 10px;
+}
+@mixin add($color:$color-Green, $border-color: blue, $font-size:function.convertitor-size(24px)){
+  display: flex;
+  border: 2px solid $border-color;
+  color: $color;
+  font-size: $font-size;
+  margin-top: 10px;
+}
+.add{
+  @include add()
+}
+.numbers{
+ display: flex;
+ justify-content: space-between;
+
+}
+@for $number from 1 to 20{
+  .number div:nth-child(#{$number}){
+      border: 1px solid red;
+      width: function.convertitor-size(27px); 
+      height: function.convertitor-size(27px);
+      margin-top: 10px;
+      margin-right: 10px;
+  }
+}
+@each $size in (1,2,3){
+  .fs-#{$size}rem{
+      font-size: $size + rem;
+  }
+}
+@for $index from 1 through 20 {
+section div:nth-child(#{$index}){
+    $sfondo: $color-nm;
+    $color: $color-bg;
+    background-color: darken($sfondo, $index * 5%);
+    color: lighten($color, $index * 5%);
+}
+@if $index == 10{
+    section div:nth-child(#{$index}){
+    background-color: blue;
+    color: $color-Red;
+    }
+}
+}
