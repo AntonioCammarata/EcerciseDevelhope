@@ -1,5 +1,5 @@
 function isAdult(age) {
-  return age >= 18;
+  return  {age} >= 18;
 }
 
 const person = {
@@ -8,6 +8,5 @@ const person = {
   lastName: "Rossi",
   age: 25,
 };
-const { id, firstName, lastName, age } = person;
 
 console.log(isAdult(person));
