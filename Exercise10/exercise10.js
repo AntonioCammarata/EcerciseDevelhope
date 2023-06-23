@@ -1,11 +1,34 @@
-const express = require("express");
+import express from "express";
+import "express-async-errors";
+import morgan from "morgan";
+
 const app = express();
-app.use(express.json());
+const port = 3000;
 
-const planets = require("./planetDatabase");
+app.use(morgan("dev"));
 
-app.get("/api/planets", (res, req) => {
-  res.statusCode(200).json({ succes: true });
+let planets = [
+  {
+    id: 1,
+    name: "Earth",
+  },
+  {
+    id: 2,
+    name: "Mars",
+  },
+];
+
+app.get("/api/planets", (req, res) => {
+  res.status(200).json(planets);
 });
 
-app.listen(3000);
+app.get("/api/planets/:id", (req, res) => {
+  const { id } = req.params;
+  const planet = planets.find((planet) => planet.id === Number(id));
+
+  res.status(200).json(planet);
+});
+
+app.listen(port, () => {
+  console.log(`App listening on port: http://localhost${port}`);
+});
